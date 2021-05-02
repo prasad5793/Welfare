@@ -1,90 +1,114 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head data-th-replace="~{fragments/headerSection :: headerSectionFragment}" ></head >
 <body class="hold-transition sidebar-mini layout-fixed" >
 <div class="wrapper" ><!-- wrapper start -->
-    <nav data-th-replace="~{fragments/navbarSection :: navbarSectionFragment}" ></nav ><!-- navbar Section -->
-    <aside data-th-replace="~{fragments/sidebarSection :: sidebarSectionFragment}" ></aside ><!-- navbar Section -->
-    <div class="content-wrapper" ><!-- content-wrapper Start -->
-        <section data-th-replace="~{fragments/contentHeader :: contentHeaderSectionFragment}" ></section ><!-- content-header Start -->
-        <!--action button layer---------------------------------------------------------     -->
-<!--        <div class="row m-1">-->
-<!--            <div class="col-12">-->
-<!--                <div class="text-right">-->
-<!--                    <div text-right>-->
-<!--                        <button type="button" class="btn btn-info btn-sm">-->
-<!--                            <a  data-th-href="${'/employee/add'}" >-->
-<!--                                <span class="info-box-icon text-white"><i class="fa fa-plus mr-1" ></i ></span >-->
-<!--                                <span class="text-white"> Add Employee </span></a>-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!--form action end button---------------------------------------------------------     -->
+  <nav data-th-replace="~{fragments/navbarSection :: navbarSectionFragment}" ></nav ><!-- navbar Section -->
+  <aside data-th-replace="~{fragments/sidebarSection :: sidebarSectionFragment}" ></aside ><!-- navbar Section -->
+  <div class="content-wrapper" ><!-- content-wrapper Start -->
+    <section data-th-replace="~{fragments/contentHeader :: contentHeaderSectionFragment}" ></section >
+                                <!-- content-header Start -->
+                                <!--action button layer---------------------------------------------------------     -->
+                                <!--        <div class="row m-1">-->
+                                <!--            <div class="col-12">-->
+                                <!--                <div class="text-right">-->
+                                <!--                    <div text-right>-->
+                                <!--                        <button type="button" class="btn btn-info btn-sm">-->
+                                <!--                            <a  data-th-href="${'/employee/add'}" >-->
+                                <!--                                <span class="info-box-icon text-white"><i class="fa fa-plus mr-1" ></i ></span >-->
+                                <!--                                <span class="text-white"> Add Employee </span></a>-->
+                                <!--                        </button>-->
+                                <!--                    </div>-->
+                                <!--                </div>-->
+                                <!--            </div>-->
+                                <!--        </div>-->
+                                <!--form action end button---------------------------------------------------------     -->
 
 
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                             <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card-header">
-                                            <h4 class="breadcrumb-item active" data-th-text="${contendHeader}"></h4>
-                                        </div>
-                                        <div class="row" >
-                                            <div class="col" >
-                                                <p> Total Account Balance  = <span data-th-text="${(instalmentAmount+otherFundAmount) - (deathAmount + otherExpenseAmount) }"></span></p>
-                                            </div >
-                                        </div >
-                                    <div class="container-fluid">
-                                        <table class="table table-hover" id="myTable">
-                                            <thead class="thead-inverse">
-                                            <tr>
-                                                <th>Index</th>
-                                                <th>Fund Source</th>
-                                                <th>Amount</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr >
-                                                <td th:text="${'1'}"></td>
-                                                <td th:text="${'Instalment Collection'}"></td>
-                                                <td th:text="${instalmentAmount}"></td>
-                                            </tr>
-                                            <tr >
-                                                <td th:text="${'2'}"></td>
-                                                <td th:text="${'Other Fund Receiving Collection'}"></td>
-                                                <td th:text="${otherFundAmount}"></td>
-                                            </tr>
-                                            <tr >
-                                                <td th:text="${'3'}"></td>
-                                                <td th:text="${'Other Expense Amount Collection'}"></td>
-                                                <td th:text="${otherExpenseAmount}"></td>
-                                            </tr>
-                                            <tr >
-                                                <td th:text="${'4'}"></td>
-                                                <td th:text="${'Death Donation Collection'}"></td>
-                                                <td th:text="${deathAmount}"></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- content-wrapper end -->
-</div>
-<!--footer include-->
-<div data-th-replace="~{fragments/footerSection :: footerSectionFragment}"></div><!-- footer Section -->
-</div><!-- wrapper end -->
-<div data-th-replace="~{fragments/scriptSection :: scriptSectionFragment}"></div><!-- script Fragment -->
-</body>
-</html>
+    <div class="content-header" >
+      <div class="container-fluid" >
+        <div class="row" >
+          <div class="col-md-12" >
+            <div class="row" >
+              <div class="col-md-12" >
+                <div class="card" >
+                  <div class="card-body" >
+                    <div class="card-header" >
+                      <h4 class="breadcrumb-item active" data-th-text="${contendHeader}" ></h4 >
+                    </div >
+                    <div class="row" >
+                      <div class="col" >
+                        <p > Total Account Balance = <span
+                              data-th-text="${(instalmentAmount+otherFundAmount) - (deathAmount + otherExpenseAmount) }" ></span >
+                        </p >
+                      </div >
+                    </div >
+                    <div class="container-fluid" >
+                      <table class="table table-hover" id="myTable" >
+                        <thead class="thead-inverse" >
+                        <tr >
+                          <th >Index</th >
+                          <th >Fund Source</th >
+                          <th >Amount</th >
+                          <th >To Visual</th >
+                        </tr >
+                        </thead >
+                        <tbody >
+                        <tr >
+                          <td th:text="${'1'}" ></td >
+                          <td th:text="${'Instalment Collection'}" ></td >
+                          <td th:text="${instalmentAmount}" ></td >
+                          <td >
+                            <a href="/collection" >
+                              <button type="button" class="btn btn-info" >View Data</button >
+                            </a >
+                          </td >
+                        </tr >
+                        <tr >
+                          <td th:text="${'2'}" ></td >
+                          <td th:text="${'Other Fund Receiving Collection'}" ></td >
+                          <td th:text="${otherFundAmount}" ></td >
+                          <td >
+                            <a href="/otherFundReceiving" >
+                              <button type="button" class="btn btn-info" >View Data</button >
+                            </a >
+                          </td >
+                        </tr >
+                        <tr >
+                          <td th:text="${'3'}" ></td >
+                          <td th:text="${'Other Expense Amount Collection'}" ></td >
+                          <td th:text="${otherExpenseAmount}" ></td >
+                          <td >
+                            <a href="/otherExpence" >
+                              <button type="button" class="btn btn-info" >View Data</button >
+                            </a >
+                          </td >
+                        </tr >
+                        <tr >
+                          <td th:text="${'4'}" ></td >
+                          <td th:text="${'Death Donation Collection'}" ></td >
+                          <td th:text="${deathAmount}" ></td >
+                          <td >
+                            <a href="/deathDonation" >
+                              <button type="button" class="btn btn-info" >View Data</button >
+                            </a >
+                          </td >
+                        </tr >
+                        </tbody >
+                      </table >
+                    </div >
+                  </div >
+                </div >
+              </div >
+            </div >
+          </div >
+        </div >
+      </div >
+    </div ><!-- content-wrapper end -->
+  </div >
+                      <!--footer include-->
+  <div data-th-replace="~{fragments/footerSection :: footerSectionFragment}" ></div ><!-- footer Section -->
+</div ><!-- wrapper end -->
+<div data-th-replace="~{fragments/scriptSection :: scriptSectionFragment}" ></div ><!-- script Fragment -->
+</body >
+</html >
